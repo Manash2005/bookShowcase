@@ -15,8 +15,7 @@
        a:hover{color: var(--secondary-color);}
        /* Main header start */
        header{
-        z-index: 2;
-        background-color: black;
+        z-index: 3;
        }
        #navbar{
         position: fixed;
@@ -35,6 +34,35 @@
        .genre_description{
         font-size: 15px;
         font-family: Georgia, 'Times New Roman', Times, serif;
+       }
+       /* Main header end */
+
+       /* Main section start */
+       .main-section{
+        height: 100vh;
+        border: 2px solid red;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        overflow: hidden;
+       }
+       .overlay{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 2;
+       }
+       .text_overlay{
+        z-index: 5;
+        border: 2px solid red;
+        position: relative;
+        top:40%;
+        left: 10%;  
+        width: auto;
        }
 
     </style>
@@ -73,6 +101,7 @@
                         <div class="col-10">
                             <h6>Horror Genre</h6>
                             <p class="genre_description">Dive into terror: chilling tales, haunted pages, and nightmares unleashed. Explore our horror book collection.</p>
+                            <p>Learn more <span class="bi bi-arrow-right-short"></span></p>
                         </div>
                     </a>
                 </div>
@@ -84,6 +113,7 @@
                         <div class="col-10">
                             <h6>Comic Genre</h6>
                             <p class="genre_description">Vibrant worlds, epic battles, and iconic heroes. Explore our diverse comic collection, from classic to cutting-edge.</p>
+                            <p>Learn more <span class="bi bi-arrow-right-short"></span></p>
                         </div>
                     </a>
                 </div>
@@ -95,6 +125,7 @@
                         <div class="col-10">
                             <h6>Romantic Genre</h6>
                             <p class="genre_description">Heartfelt stories, passionate encounters, and enduring love. Find your next romantic escape within our collection.</p>
+                            <p>Learn more <span class="bi bi-arrow-right-short"></span></p>
                         </div>
                     </a>
                 </div>
@@ -106,6 +137,7 @@
                         <div class="col-10">
                             <h6>Sci-fi Genre</h6>
                             <p class="genre_description">Explore cosmic frontiers! Sci-fi adventures await, with starships, alien worlds, and thrilling journeys into the unknown.</p>
+                            <p>Learn more <span class="bi bi-arrow-right-short"></span></p>
                         </div>
                     </a>
                 </div>
@@ -115,6 +147,21 @@
         <button class="navbar-toggler bi bi-x-square-fill navbar_close text-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"></button>
     </nav>
     <!-- Dropdown Navigation end -->
+
+    <!-- Main section start -->
+    <section class="main-section">
+
+        <div class="overlay"></div>
+
+        <img src="/public/images/Main_section (2).jpeg" alt="" class="img-fluid">
+
+        <div class="text_overlay container-fluid">
+            <div>
+                <h4>Discover Your Next Favorite Book</h4>
+                <p>One Page at a Time!</p>
+            </div>
+        </div>
+    </section>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
