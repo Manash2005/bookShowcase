@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        :root {
+            --primary-color: #084214;
+            --secondary-color: rgb(155, 102, 4);
+        }
+
+        a {
+            color: var(--primary-color);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Main header start */
+        header {
+            z-index: 3;
+        }
+
+        #navbar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgb(99, 197, 230);
+            z-index: 4;
+        }
+
+        .heading_contents button{
+            text-decoration: none;
+        }
+        .heading_contents button:hover{
+            scale: 1.1;
+            color: lightgreen;
+            font-weight: bold;
+            transition: all 0.5s ease;
+            border-bottom: 2px solid greenyellow;
+            border-radius: 4px;
+        }
+
+        .navbar_close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .genre_description {
+            font-size: 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .cover {
+            box-shadow: 2px 2px 25px darkblue;
+            border-radius: 25px;
+        }
+        
+        .cover:hover {
+            transform: rotateY(180deg);
+            box-shadow: 0px 0px 45px 10px green;
+            transition: 1s ease;
+            scale: 1.1;;
+        }
+
+        /* Main header end */
+
+        /* Main section start */
+        .main-section{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            overflow: hidden;
+            background-image: url(public/images/main_section.jpeg);
+            background-size: cover;
+        }
+
+        .overlay{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            opacity: 0.7;
+            z-index: 2;
+        }
+
+        .moto{
+            position: relative;
+            top: 40%;
+            left: 20%;
+            z-index: 3;
+        }
+
+/* For screens smaller than 576px */
+@media (max-width: 576px) {
+    .cover {
+        border-radius: 0px;
+        box-shadow: 2px 2px 10px darkblue;
+    }
+}
+
+    </style>
+</head>
+
+<body class="container-fluid">
+
+    <!-- Header start -->
+    <header class="p-3 position-absolute start-0 top-0 end-0">
+
+        <div class="d-flex justify-content-between">
+
+            <a href="/" class="text-decoration-none text-white fs-5 fw-bold">Logo</a>
+
+            <div class="row px-4 text-white heading_contents">
+                <button class="col-4 p-1 navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">Genre
+                </button>
+                <button class="col-7 p-1 navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">Recommended
+                </button>
+            </div>
+
+
+        </div>
+
+    </header>
+    <!-- Header End -->
+
+    <!-- Dropdown Navigation Start -->
+    <nav class="collapse navbar-collapse dropdown-nav text-center" id="navbar">
+
+        <!-- Carousel Start -->
+        <div id="slide" class="carousel slide carousel-fade">
+            <div class="carousel-indicators">
+                <button style="background-color: black;" type="button" data-bs-target="#slide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button style="background-color: black;" type="button" data-bs-target="#slide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button style="background-color: black;" type="button" data-bs-target="#slide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Slide 1 -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid p-4 pt-4 align-items-center">
+                        <div class="row align-items-center">
+
+                            <!-- Card 1 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/Horror-cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Horror Genre</h5>
+                                        <p class="genre_description block">Dive into terror: chilling tales, haunted pages,
+                                            and
+                                            nightmares unleashed. Explore our horror book collection.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/Comic-cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Comic Genre</h5>
+                                        <p class="genre_description block">Vibrant worlds, epic battles, and iconic heroes.
+                                            Explore
+                                            our diverse comic collection, from classic to cutting-edge.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/Romantic-cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Romantic Genre</h5>
+                                        <p class="genre_description block">Heartfelt stories, passionate encounters, and
+                                            enduring
+                                            love. Find your next romantic escape within our collection.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/Sci-fi-cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Sci-fi Genre</h5>
+                                        <p class="genre_description block">Explore cosmic frontiers! Sci-fi adventures
+                                        starships, alien worlds, and thrilling journeys into the unknown.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <!-- Card 1 -->
+                    <div class="container-fluid p-4 pt-4 align-items-center d-block w-100">
+                        <div class="row align-items-center">
+
+                            <!-- Card 1 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/mystery_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Mystery Genre</h5>
+                                        <p class="genre_description block">Intriguing tales delving deep into puzzling enigmas, hidden clues and the complexities of truth and deception.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/action_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Action Genre</h5>
+                                        <p class="genre_description block">Vibrant worlds, epic battles, and iconic heroes.
+                                            Explore
+                                            our diverse comic collection, from classic to cutting-edge.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/drama_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Drama Genre</h5>
+                                        <p class="genre_description block">Poignant tales delving deep into human struggles, relationships, emotions, raw  and the complexities of life and fate.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/History_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>History Genre</h5>
+                                        <p class="genre_description block">Epic tales delving deep into historical events, figures, eras, hidden truths, and the complexities of time and legacy.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="container-fluid p-4 pt-4 align-items-center d-block w-100">
+                        <div class="row align-items-center">
+
+                            <!-- Card 1 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/spiritual_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Spiritual Genre</h5>
+                                        <p class="genre_description block">Soulful tales delving deep into spiritual quests, inner peace, divine mysteries, and the complexities of faith and enlightenment.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/crime_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Crime Genre</h5>
+                                        <p class="genre_description block">Gritty tales delving deep into criminal minds, motives, investigations, dark secrets, and the complexities of justice.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- card 3 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/psycology_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Psycology Genre</h5>
+                                        <p class="genre_description block">Mind-twisting tales delving deep into human behavior, emotions, psyche, logic and the complexities of consciousness.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="col-12 col-sm-3">
+                                <a href="#" class="row text-decoration-none">
+                                    <div class="col-2 col-sm-12 mb-4">
+                                        <img src="public/images/poetry_cover.jpeg" alt=""
+                                            class="col-11 cover" loading="lazy">
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="col-10 text-start">
+                                        <h5>Poetry Genre</h5>
+                                        <p class="genre_description block">Poetry: Emotion distilled. Words woven with rhythm and metaphor, painting vivid feelings in concise, evocative verses.<p>
+                                        <p>Learn more <span class="bi bi-arrow-right-short"></span><p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+    <button style="width: 40px;" class="carousel-control-prev" type="button" data-bs-target="#slide" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-black rounded-4" aria-hidden="true"></span>
+    </button>
+    <button style="width: 40px;" class="carousel-control-next" type="button" data-bs-target="#slide" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-dark rounded-4 " aria-hidden="true"></span>
+    </button>
+    </div>
+
+        <button class="navbar-toggler bi bi-x-square-fill navbar_close text-danger fs-2 z-3" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+            aria-label="Toggle navigation"></button>
+    </nav>
+    <!-- Dropdown Navigation end -->
+
+    <!-- Main section start -->
+    <section class="main-section h-100 w-100">
+
+        <div class="overlay"></div>
+        <div class="moto">
+            <h1 style="color: white;">Find Your Perfect Book <span>📖</span></h1>
+
+            <p class="text-white">
+                Honest book reviews, ratings, and recommendations.
+                <span>&#128525;</span>
+            </p>
+
+            <!-- Toggle Button Start-->
+            <button class="navbar-toggler text-white fs-2" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="btn btn-primary fs-5">Explore Genres</span>
+            </button>
+            <!-- Toggle Button End -->
+        </div>
+        
+    </section>
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+</body>
+
+</html>
